@@ -1,0 +1,1 @@
+<iframe src="<?php echo base_url();?>smsgateway_v1_scm" style="border: 0; width:100%; height:800px;"></iframe>

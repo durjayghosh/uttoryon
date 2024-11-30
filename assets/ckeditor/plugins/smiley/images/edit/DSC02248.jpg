@@ -1,0 +1,730 @@
+>
+																	<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_square-grey"> Checkbox 2 </label>
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_square-grey"> Checkbox 3 </label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Radio List</label>
+															<div class="input-group">
+																<div class="icheck-list">
+																	<label>
+																	<input type="radio" name="radio1" class="icheck" data-radio="iradio_square-grey"> Radio Button 1 </label>
+																	<label>
+																	<input type="radio" name="radio1" checked class="icheck" data-radio="iradio_square-grey"> Radio Button 2 </label>
+																	<label>
+																	<input type="radio" name="radio1" class="icheck" data-radio="iradio_square-grey"> Radio Button 3 </label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Inline Radios</label>
+															<div class="input-group">
+																<div class="icheck-inline">
+																	<label>
+																	<input type="radio" name="radio2" class="icheck" data-radio="iradio_square-grey"> Radio Button 1 </label>
+																	<label>
+																	<input type="radio" name="radio2" checked class="icheck" data-radio="iradio_square-grey"> Radio Button 2 </label>
+																	<label>
+																	<input type="radio" name="radio2" class="icheck" data-radio="iradio_square-grey"> Radio Button 3 </label>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-actions">
+														<button type="submit" class="btn green-haze">Submit</button>
+														<button type="button" class="btn default">Cancel</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="tab-pane" id="portlet_tab_1_3">
+											<div class="skin skin-flat">
+												<form role="form">
+													<div class="form-body">
+														<div class="form-group">
+															<label>Colors Schemes</label>
+															<div class="input-group">
+																<ul class="icheck-colors">
+																	<li>
+																	</li>
+																	<li class="red">
+																	</li>
+																	<li class="green">
+																	</li>
+																	<li class="blue">
+																	</li>
+																	<li class="aero">
+																	</li>
+																	<li class="grey active">
+																	</li>
+																	<li class="orange">
+																	</li>
+																	<li class="pink">
+																	</li>
+																	<li class="purple">
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Checkbox List</label>
+															<div class="input-group">
+																<div class="icheck-list">
+																	<label>
+															<input type="checkbox" class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 1 </label>
+																	<label>
+																	<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 2 </label>
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 3 </label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Inline Checkboxes</label>
+															<div class="input-group">
+																<div class="icheck-inline">
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 1 </label>
+																	<label>
+																	<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 2 </label>
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 3 </label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Radio List</label>
+															<div class="input-group">
+																<div class="icheck-list">
+																	<label>
+																	<input type="radio" name="radio1" class="icheck" data-radio="iradio_flat-grey"> Radio Button 1 </label>
+																	<label>
+																	<input type="radio" name="radio1" checked class="icheck" data-radio="iradio_flat-grey"> Radio Button 2 </label>
+																	<label>
+																	<input type="radio" name="radio1" class="icheck" data-radio="iradio_flat-grey"> Radio Button 3 </label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Inline Radios</label>
+															<div class="input-group">
+																<div class="icheck-inline">
+																	<label>
+																	<input type="radio" name="radio2" class="icheck" data-radio="iradio_flat-grey"> Radio Button 1 </label>
+																	<label>
+																	<input type="radio" name="radio2" checked class="icheck" data-radio="iradio_flat-grey"> Radio Button 2 </label>
+																	<label>
+															<input type="radio" name="radio2" class="icheck" data-radio="iradio_flat-grey"> Radio Button 3 </label>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-actions">
+														<button type="submit" class="btn green-haze">Submit</button>
+														<button type="button" class="btn default">Cancel</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="tab-pane" id="portlet_tab_1_4">
+											<div class="skin skin-line">
+												<form role="form">
+													<div class="form-body">
+														<div class="form-group">
+															<label>Colors Schemes</label>
+															<div class="input-group">
+																<ul class="icheck-colors">
+																	<li>
+																	</li>
+																	<li class="red">
+																	</li>
+																	<li class="green">
+																	</li>
+																	<li class="blue">
+																	</li>
+																	<li class="aero">
+																	</li>
+																	<li class="grey active">
+																	</li>
+																	<li class="orange">
+																	</li>
+																	<li class="pink">
+																	</li>
+																	<li class="purple">
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Checkbox List</label>
+															<div class="input-group">
+																<div class="icheck-list">
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox 1">
+																	</label>
+																	<label>
+																	<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox 2">
+																	</label>
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox 3">
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Inline Checkboxes</label>
+															<div class="input-group">
+														<div class="icheck-inline">
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox 1">
+																	</label>
+																	<label>
+																	<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox 2">
+																	</label>
+																	<label>
+																	<input type="checkbox" class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox 3">
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Radio List</label>
+															<div class="input-group">
+																<div class="icheck-list">
+																	<label>
+																	<input type="radio" name="radio1" class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 1 ">
+																	</label>
+																	<label>
+																	<input type="radio" name="radio1" checked class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 2">
+																	</label>
+																	<label>
+																	<input type="radio" name="radio1" class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 3">
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label>Inline Radios</label>
+															<div class="input-group">
+																<div class="icheck-inline">
+																	<label>
+																	<input type="radio" name="radio2" class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 1">
+																	</label>
+																	<label>
+																	<input type="radio" name="radio2" checked class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 2">
+																	</label>
+																	<label>
+																	<input type="radio" name="radio2" class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 3">
+																	</label>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-actions">
+														<button type="submit" class="btn green-haze">Smit</button>
+														<button type="button" class="btn default">Cancel</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="portlet light">
+								<div class="portlet-title tabbable-line">
+									<div class="caption caption-md">
+										<i class="icon-globe font-green-sharp"></i>
+										<span class="caption-subject font-green-sharp bold uppercase">Horizontal Form</span>
+									</div>
+									<ul class="nav nav-tabs">
+										<li class="active">
+									<a href="#portlet_tab_2_1" data-toggle="tab">
+											Minimal </a>
+										</li>
+										<li>
+											<a href="#portlet_tab_2_2" data-toggle="tab">
+											Square </a>
+										</li>
+										<li>
+											<a href="#portlet_tab_2_3" data-toggle="tab">
+											Flat </a>
+										</li>
+										<li>
+											<a href="#portlet_tab_2_4" data-toggle="tab">
+											Line </a>
+										</li>
+									</ul>
+								</div>
+								<div class="portlet-body form">
+									<div class="tab-content">
+										<div class="tab-pane active" id="portlet_tab_2_1">
+											<div class="skin skin-minimal">
+												<form class="form-horizontal" role="form">
+													<div class="form-body">
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Colors Schemes </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<ul class="icheck-colors">
+																		<li>
+																		</li>
+																		<li class="red">
+																		</li>
+																		<li class="green">
+																		</li>
+																		<li class="blue">
+																		</li>
+																		<li class="aero">
+																		</li>
+																		<li class="grey active">
+																		</li>
+																		<li class="orange">
+																		</li>
+																		<li class="pink">
+																		</li>
+																		<li class="purple">
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Checkbox List </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="checkbox" class="icheck"> Checkbox 1 </label>
+																		<label>
+																		<input type="checkbox" checked class="icheck"> Checkbox 2 </label>
+																		<label>
+																		<input type="checkbox" class="icheck"> Checkbox 3 </label>
+																	</div>
+																</div>
+															</div>
+												</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Inline</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="checkbox" class="icheck"> Checkbox 1 </label>
+																		<label>
+																		<input type="checkbox" checked class="icheck"> Checkbox 2 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Radio List</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="radio" name="radio1" class="icheck"> Radio Button 1 </label>
+																		<label>
+																		<input type="radio" name="radio1" checked class="icheck"> Radio Button 2 </label>
+																		<label>
+																		<input type="radio" name="radio1" class="icheck"> Radio Button 3 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Inline Radios</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="radio" name="radio2" class="icheck"> Radio Button 1 </label>
+																		<label>
+																		<input type="radio" name="radio2" checked class="icheck"> Radio Button 2 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-actions">
+														<button type="submit" class="btn green-haze">Submit</button>
+														<button type="button" class="btn default">Cancel</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="tab-pane" id="portlet_tab_2_2">
+											<div class="skin skin-square">
+												<form class="form-horizontal" role="form">
+													<div cla="form-body">
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Colors Schemes </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<ul class="icheck-colors">
+																		<li>
+																		</li>
+																		<li class="red">
+																		</li>
+																		<li class="green">
+																		</li>
+																		<li class="blue">
+																		</li>
+																		<li class="aero">
+																		</li>
+																		<li class="grey active">
+																		</li>
+																		<li class="orange">
+																		</li>
+																		<li class="pink">
+																		</li>
+																		<li class="purple">
+																		</li>
+																	</ul>
+																</div>
+													</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Checkbox List </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_square-grey"> Checkbox 1 </label>
+																		<label>
+																		<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_square-grey"> Checkbox 2 </label>
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_square-grey"> Checkbox 3 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Inline</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_square-grey"> Checkbox 1 </label>
+																		<label>
+																		<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_square-grey"> Checkbox 2 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Radio List</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="radio" name="radio1" class="icheck" data-radio="iradio_square-grey"> Radio Button 1 </label>
+																		<label>
+																		<input type="radio" name="radio1" checked class="icheck" data-radio="iradio_square-grey"> Radio Button 2 </label>
+																		<label>
+																		<input type="radio" name="radio1" class="icheck" data-radio="iradio_square-grey"> Radio Button 3 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<labellass="col-md-4 control-label">Inline Radios</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="radio" name="radio2" class="icheck" data-radio="iradio_square-grey"> Radio Button 1 </label>
+																		<label>
+																		<input type="radio" name="radio2" checked class="icheck" data-radio="iradio_square-grey"> Radio Button 2 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-actions">
+														<button type="submit" class="btn green-haze">Submit</button>
+														<button type="button" class="btn default">Cancel</button>
+											</div>
+												</form>
+											</div>
+										</div>
+										<div class="tab-pane" id="portlet_tab_2_3">
+											<div class="skin skin-flat">
+												<form class="form-horizontal" role="form">
+													<div class="form-body">
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Colors Schemes </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<ul class="icheck-colors">
+																		<li>
+																		</li>
+																		<li class="red">
+																		</li>
+																		<li class="green">
+																		</li>
+																		<li class="blue">
+																		</li>
+																		<li class="aero">
+																		</li>
+																		<li class="grey active">
+																		</li>
+																		<li class="orange">
+																		</li>
+																		<li class="pink">
+																		</li>
+																		<li class="purple">
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Checkbox List </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 1 </label>
+																		<label>
+																		<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 2 </label>
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 3 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Inline</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_flat-grey Checkbox 1 </label>
+																		<label>
+																		<input type="checkbox" checked class="icheck" data-checkbox="icheckbox_flat-grey"> Checkbox 2 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Radio List</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="radio" name="radio1" class="icheck" data-radio="iradio_flat-grey"> Radio Button 1 </label>
+																		<label>
+																		<input type="radio" name="radio1" checked class="icheck" data-radio="iradio_flat-grey"> Radio Button 2 </label>
+																		<label>
+																		<input type="radio" name="radio1" class="icheck" data-radio="iradio_flat-grey"> Radio Button 3 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Inline Radios</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="radio" name="radio2" class="icheck" data-radio="iradio_flat-grey"> Radio Button 1 </label>
+																		<label>
+																		<input type="radio" name="radio2" checked class="icheck" data-radio="iradio_flat-grey"> Radio Button 2 </label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-actions">
+														<button type="submit" class="btn green-haze">Submit</button>
+														<button type="button" class="btn default">Cancel</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="tab-pane" id="portlet_tab_2_4">
+											<div class="skin skin-line">
+												<form class="form-horizontal" role="form">
+													<div class="form-body">
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Colors Schemes </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<ul class="icheck-colors">
+																		<li>
+																		</li>
+																		<li class="red">
+																		</li>
+																		<li class="green">
+																		</li>
+																		<li class="blue">
+																		</li>
+																		<li class="aero">
+																		</li>
+																		<li class="grey active">
+																		</li>
+																		<li class="orange">
+																		</li>
+																		<li class="pink">
+																		</li>
+																		<li class="purple">
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">
+															Checkbox List </label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox Button 1">
+																		</label>
+																		<label>
+																		<input type="checkbox" checked class="ichk" data-checkbox="icheckbox_line-grey" data-label="Checkbox Button 2">
+																		</label>
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox Button 3">
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Inline</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="checkbox" class="icheck" data-checkbox="icheckbox_line-grey" data-label="Checkbox 1">
+																		</label>
+																		<label>
+																		<input type="checkbox" checked class="ichk" data-checkbox="icheckbox_line-grey" data-label="Checkbox 2">
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Radio List</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-list">
+																		<label>
+																		<input type="radio" name="radio1" class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 1">
+																		</label>
+																		<label>
+																		<input type="radio" name="radio1" checked class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 2">
+																		</label>
+																		<label>
+																		<input type="radio" name="rio1" class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 3">
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-4 control-label">Inline Radios</label>
+															<div class="col-md-8">
+																<div class="input-group">
+																	<div class="icheck-inline">
+																		<label>
+																		<input type="radio" name="radio2" class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 1">
+																		</label>
+																		<label>
+																		<input type="radio" name="radio2" checked class="icheck" data-radio="iradio_line-grey" data-label="Radio Button 2">
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-actions">
+														<button type="submit" class="btn green-haze">Submit</button>
+														<button type="button" class="btn default">Cancel</button>												</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2014 &copy; Metronic by keenthemes. <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../../assets/global/pluginscheck/icheck.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout4/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout4/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/form-icheck.js"></script>
+<!-- BEGIN END LEVEL SCRIPTS -->
+<script>
+      jQuery(document).ready(function() {    
+         Metronic.init(); // init metronic core components
+Layout.init(); // init current layout
+Demo.init(); // init demo features
+FormiCheck.init(); // init page demo
+      });
+   </script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                Ù“U0†×ÕèÀ*€\ÝÙ ÒÝîÛÈÌ—O `ŠÎÙáÀ5áßPÛýÙ .ß Ù`ÒÌ{fŸ ¦À þ ÛÙÕÕÝêÒ ÈÌ™{o{»èŒîêA¤‘æjÛ€ áèÝÐ•>H™ ÌÕÊÎ¿ÄÕÝÙ×ÐÈ€Ù»Û ÁsH9uÈÕÐ(ÝãÝ€¢á .Ýã¥ßáÐÝÛÛÊ ÐÕ•9   >f¤¬ŸŸ³Á ÒßæÝÐ×ÒÕ4ßÙ@Rá@xÀ³Ùãã ’ãÕÐ×þÝ ÙÒÎÒ××ÙGÀÏÀa€&ÝÛ ²Ý Ýßþãß×Ð ÐÛãêæ KáÛÂÛ€ÝááÛ Ã þáÿÝãæáe >ã ²"á §@#Ýö×@O ªß€²>€@  eßÛþÝÿÛþ ÙÿÝýÛÙ× þÛüÙýßÝÛÝAÇ HÝÛ ßHýÛÀ×Û€âÕ×Ûãû€cþÝ™À9ÕÐá	 tÙÙ  ßÛÝßÝ××Ûäýá@Ýáb# ÛýÒÿÐÒ€Ù×ÙÕÒÒ×á)×Ù¡ ‚ÛÝáÝ€×Ý×ÌÊÌÐ ˆAÀmÝÝæá`}ÛÝæ ÛÕÒÕÙC à5ããáßÀZáPãþæ ýàI	±ÀŒãßÙÀ= ý %x *×ãáNþêPÿã	æ \îÁ‘è°ýæáÀ!!ã€N
+ì"lã þèæßß lÿæÿã €'#ÙÛÛÕÙ!…Îè€‚ ^æß`€… {Ý ”þæê /£À+ Rèæüà// / 7   Cjò gáæê   €3èêá×ãè#ÕÕ)jd D "5	 	(OuŽ€¤³ÁÆÊÐß!kGÀ£€+àîîæÀ
+æèãù …êèêî`iê tüê!€Š÷òìì€{êðô òùôùù@ôôûûðò`{î ðô÷îìþê˜ìðò`q`"ì¢þæ
+î€£òðè á÷÷òþðÿî@	÷ôôòô€pî îýìÿîþæüã'îò€îìì	 ôò ôðîîÐôùûù ‘ò ` êîîêêðüîN* Bœ@Šêã ŒÒ€ŽD5o°Ýà æãêî×®Ž‚ O1J¨ Ûáêìðþ÷òàýèÿÛ ãß¬M/™ãî`€ù€1ÆŽ^ /  H€®ìýè-îòÀ!¨ êèÛ„"-Y³Ý@îæã òÐˆM3 +>Hj³êìbæ ¬ÿè@°èà ×Š$ -†Ìã MÛãêÕ ¢`J`J$@F¤×× Îáî@èþìÿè" Ì„3$^o¬Ý`/**
+ * bootbox.js v4.4.0
+ *
+ * http://bootboxjs.com/license.txt
+ */
+!function(a,b){"use strict";"funcon"==typeof define&&define.amd?define(["jquery"],b):"object"==typeof exports?module.exports=b(require("jquery")):a.bootbox=b(a.jQuery)}(this,function a(b,c){"use strict";function d(a){var b=q[o.locale];return b?b[a]:q.en[a]}function e(a,c,d){a.stopPropagation(),a.preventDefault();var e=b.isFunction(d)&&d.call(c,a)===!1;e||c.modal("hide")}function f(a){var b,c=0;for(b in a)c++;return c}function g(a,c){var d=0;b.each(a,function(a,b){c(a,b,d++)})}function h(a){var c,d;if("object"!=typeof a)throw new Error("Please supply an object of options");if(!a.message)throw new Error("Please specify a message");return a=b.extend({},o,a),a.buttons||(a.buttons={}),c=a.buttons,d=f(c),g(c,function(a,e,f){if(b.isFunction(e)&&(e=c[a]={callback:e}),"object"!==b.type(e))throw new Error("button with key "+a+" must be an object");e.label||(e.label=a),e.className||(e.className=2>=d&&f===d-1?"btn-primary":"btn-default")}),a}function i(a,b){var c=a.length,d={};if(1>c||c>2)throw new Error("Invalid argument length");return 2===c||"string"==typeof a[0]?(d[b[0]]=a[0],d[b[1]]=a[1]):d=a[0],d}function j(a,c,d){return b.extend(!0,{},a,i(c,d))}function k(a,b,c,d){var e={className:"bootbox-"+a,buttons:l.apply(null,b)};return m(j(e,d,c),b)}function l(){for(var a={},b=0,c=arguments.length;c>b;b++){var e=arguments[b],f=e.toLowerCase(),g=e.toUpperCase();a[f]={label:d(g)}}return a}function m(a,b){var d={};return g(b,function(a,b){d[b]=!0}),g(a.buttons,function(a){if(d[a]===c)throw new Error("button key "+a+" is not allowed (options are "+b.join("\n")+")")}),a}var n={dialog:"<div class='bootbox modal' tabindex='-1' role='dialog'><div class='modal-dialog'><div class='modal-content'><div class='modal-body'><div class='bootbox-body'></div></div></div></div></div>",header:"<div class='modal-header'><h4 class='modal-title'></h4></div>",footer:"<div class='modal-footer'></div>",closeButton:"<button type='button' class='bootbox-close-button close' data-dismiss='modal' aria-hidden='true'>&times;</button>",form:"<form class='bootbox-form'></form>",inputs:{text:"<input class='bootbox-input bootbox-input-text form-control' autocomplete=off type=text />",textarea:"<textarea class='bootbox-input bootbox-input-textarea form-control'></textarea>",email:"<input class='bootbox-input bootbox-input-email form-control' autocomplete='off' type='email' />",select:"<select class='bootbox-input bootbox-input-select form-control'></select>",checkx:"<div class='checkbox'><label><input class='bootbox-input bootbox-input-checkbox' type='checkbox' /></label></div>",date:"<input class='bootbox-input bootbox-input-date form-control' autocomplete=off type='date' />",time:"<input class='bootbox-input bootbox-input-time form-control' autocomplete=off type='time' />",number:"<input class='bootbox-input bootbox-input-number form-control' autocomplete=off type='number' />",password:"<input class='bootbox-input bootbox-input-password form-control' autocomplete='off' type='password' />"}},o={locale:"en",backdrop:"static",animate:!0,className:null,closeButton:!0,show:!0,container:"body"},p={};p.alert=function(){var a;if(a=k("alert",["ok"],["message","callback"],arguments),a.callback&&!b.isFunction(a.callback))throw new Error("alert requires callback property to be a function when provided");return a.buttons.ok.callback=a.onEscape=function(){return b.isFunction(a.callback)?a.callback.call(this):!0},p.dialog(a)},p.confirm=function(){var a;if(a=k("confirm",["cancel","confirm"],["message","callback"],arguments),a.buttons.cancel.callback=a.onEscape=function(){return a.callback.call(this,!1)},a.buttons.confirm.callback=function(){return a.callback.call(this,!0)},!b.isFunction(a.callback))throw new Error("confirm requires a callback");return p.dialog(a)},p.prompt=function(){var a,d,e,f,h,i,k;if(f=b(n.form),d={className:"bootbox-prompt",buttons:l("cancel","confirm"),value:"",inputType:"text"},a=m(j(d,arguments,["title","callback"]),["cancel","confirm"]),i=a.show===c?!0:a.show,a.message=f,a.buttons.cancel.cal                                                                                                                                                                                                                                                                                                                                                             
