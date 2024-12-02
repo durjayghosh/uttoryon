@@ -2,8 +2,10 @@
 ob_start();
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
+require_once APPPATH . '../vendor/autoload.php';
 
-
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 class Super_admin extends CI_Controller
 {
     
@@ -189,8 +191,14 @@ class Super_admin extends CI_Controller
         $data['r'] = $row;
         $this->load->view('super_admin/cms/edit_notice',$data);
         $this->footer_layout();
-        
     }
+
+    function phpinfo(){
+        phpinfo();
+    }
+
+
+
 
     function update_notice(){
         $this->load->model("notice_model","nm");
@@ -929,7 +937,272 @@ class Super_admin extends CI_Controller
         $this->load->view('backend/index', $page_data);
         $this->footer_layout();
     }
-    
+    function admission_list()
+    {
+        if ($this->session->userdata('admin_login') != 1)
+            redirect(base_url(), 'refresh');
+
+        // Fetch data from the database
+        $admission = $this->db->get('admission_form')->result_array();
+
+        if (!empty($admission)) {
+            $page_data['admission'] = $admission; // Pass data to view
+        } else {
+            $page_data['admission'] = []; // Default to an empty array
+        }
+
+        // Load necessary views
+        $page_data['page_name'] = 'admission_list';
+        $this->layout(); // Header layout
+        $this->load->view('backend/admission', $page_data); // Main content view
+        $this->footer_layout(); // Footer layout
+    }
+
+
+    function admission_delete($id) {
+        $id  = $this->uri->segment(3);
+        $this->db->where('id', $id);
+        $this->db->delete('admission_form');
+        $_SESSION['success'] = 'Deleted successfully.';
+        redirect("super_admin/admission_list");
+    }
+
+
+//    function admission_list_export()
+//    {
+//        if ($this->session->userdata('admin_login') != 1)
+//            redirect(base_url(), 'refresh');
+//
+//        // Fetch data from the 'admission_form' table
+//        $admission_data = $this->db->get('admission_form')->result_array();
+//
+//        // Check if Excel export is requested
+//        if ($this->input->get('export') == 'excel') {
+//            $spreadsheet = new Spreadsheet();
+//            $sheet = $spreadsheet->getActiveSheet();
+//
+//            // Set the headers for the Excel file based on the columns in your schema
+//            $sheet->setCellValue('A1', 'ID');
+//            $sheet->setCellValue('B1', 'Class');
+//            $sheet->setCellValue('C1', 'Image');
+//            $sheet->setCellValue('D1', 'Roll ID');
+//            $sheet->setCellValue('E1', 'Student Name (Bangla)');
+//            $sheet->setCellValue('F1', 'Student Name (English)');
+//            $sheet->setCellValue('G1', 'Birth Date');
+//            $sheet->setCellValue('H1', 'Online Birth Registration No');
+//            $sheet->setCellValue('I1', 'Calculated Age');
+//            $sheet->setCellValue('J1', 'Religion');
+//            $sheet->setCellValue('K1', 'Mobile No');
+//            $sheet->setCellValue('L1', 'Father Alive Status');
+//            $sheet->setCellValue('M1', 'Father Name (Bangla)');
+//            $sheet->setCellValue('N1', 'Father Name (English)');
+//            $sheet->setCellValue('O1', 'Father NID');
+//            $sheet->setCellValue('P1', 'Father Mobile No');
+//            $sheet->setCellValue('Q1', 'Father Occupation');
+//            $sheet->setCellValue('R1', 'Father Yearly Income');
+//            $sheet->setCellValue('S1', 'Mother Alive Status');
+//            $sheet->setCellValue('T1', 'Mother Name (Bangla)');
+//            $sheet->setCellValue('U1', 'Mother Name (English)');
+//            $sheet->setCellValue('V1', 'Mother NID');
+//            $sheet->setCellValue('W1', 'Mother Mobile No');
+//            $sheet->setCellValue('X1', 'Mother Occupation');
+//            $sheet->setCellValue('Y1', 'Guardian Name');
+//            $sheet->setCellValue('Z1', 'Guardian Name (English)');
+//            $sheet->setCellValue('AA1', 'Guardian NID');
+//            $sheet->setCellValue('AB1', 'Guardian Phone');
+//            $sheet->setCellValue('AC1', 'Previous School Name');
+//            $sheet->setCellValue('AD1', 'Previous School Registration No');
+//            $sheet->setCellValue('AE1', 'Educational Year');
+//            $sheet->setCellValue('AF1', 'Permanent Address Village');
+//            $sheet->setCellValue('AG1', 'Permanent Address Post');
+//            $sheet->setCellValue('AH1', 'Permanent Address Upojila');
+//            $sheet->setCellValue('AI1', 'Permanent Address City');
+//            $sheet->setCellValue('AJ1', 'Present Address Village');
+//            $sheet->setCellValue('AK1', 'Present Address Post');
+//            $sheet->setCellValue('AL1', 'Present Address Upojila');
+//            $sheet->setCellValue('AM1', 'Present Address City');
+//            $sheet->setCellValue('AN1', 'Created Date');
+//
+//            // Fill the data in the spreadsheet
+//            $row = 2; // Start from row 2 to leave space for headers
+//            foreach ($admission_data as $data) {
+//                $sheet->setCellValue('A' . $row, $data['id']);
+//                $sheet->setCellValue('B' . $row, $data['class']);
+//                $sheet->setCellValue('C' . $row, $data['image']);
+//                $sheet->setCellValue('D' . $row, $data['roll_id']);
+//                $sheet->setCellValue('E' . $row, $data['student_name_bangla']);
+//                $sheet->setCellValue('F' . $row, $data['student_name_english']);
+//                $sheet->setCellValue('G' . $row, $data['birth_date']);
+//                $sheet->setCellValue('H' . $row, $data['online_birth_registration_no']);
+//                $sheet->setCellValue('I' . $row, $data['calculated_age_on_date']);
+//                $sheet->setCellValue('J' . $row, $data['religion']);
+//                $sheet->setCellValue('K' . $row, $data['mobile_no']);
+//                $sheet->setCellValue('L' . $row, $data['father_alive_status']);
+//                $sheet->setCellValue('M' . $row, $data['father_name_bangla']);
+//                $sheet->setCellValue('N' . $row, $data['father_name_english']);
+//                $sheet->setCellValue('O' . $row, $data['father_nid']);
+//                $sheet->setCellValue('P' . $row, $data['father_mobile_no']);
+//                $sheet->setCellValue('Q' . $row, $data['father_occupation']);
+//                $sheet->setCellValue('R' . $row, $data['father_yealy_income']);
+//                $sheet->setCellValue('S' . $row, $data['mother_alive_status']);
+//                $sheet->setCellValue('T' . $row, $data['mother_name_bangla']);
+//                $sheet->setCellValue('U' . $row, $data['mother_name_english']);
+//                $sheet->setCellValue('V' . $row, $data['mother_nid']);
+//                $sheet->setCellValue('W' . $row, $data['mother_mobile_no']);
+//                $sheet->setCellValue('X' . $row, $data['mother_occupation']);
+//                $sheet->setCellValue('Y' . $row, $data['guardian_name']);
+//                $sheet->setCellValue('Z' . $row, $data['guardian_name_english']);
+//                $sheet->setCellValue('AA' . $row, $data['guardian_nid']);
+//                $sheet->setCellValue('AB' . $row, $data['guardian_phone']);
+//                $sheet->setCellValue('AC' . $row, $data['previous_school_name']);
+//                $sheet->setCellValue('AD' . $row, $data['previous_school_registration_no']);
+//                $sheet->setCellValue('AE' . $row, $data['educational_year']);
+//                $sheet->setCellValue('AF' . $row, $data['permanent_address_vilage']);
+//                $sheet->setCellValue('AG' . $row, $data['permanent_address_post']);
+//                $sheet->setCellValue('AH' . $row, $data['permanent_address_upozila']);
+//                $sheet->setCellValue('AI' . $row, $data['permanent_address_city']);
+//                $sheet->setCellValue('AJ' . $row, $data['present_address_vilage']);
+//                $sheet->setCellValue('AK' . $row, $data['present_address_post']);
+//                $sheet->setCellValue('AL' . $row, $data['present_address_upozila']);
+//                $sheet->setCellValue('AM' . $row, $data['present_address_city']);
+//                $sheet->setCellValue('AN' . $row, $data['created_date']);
+//
+//                $row++;
+//            }
+//
+//            // Set the content type and filename for the export
+//            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+//            header('Content-Disposition: attachment;filename="admission_list.xlsx"');
+//            header('Cache-Control: max-age=0');
+//
+//            // Write the file to the output
+//            $writer = new Xlsx($spreadsheet);
+//            $writer->save('php://output');
+//            exit; // Ensure no further output after the Excel file is generated
+//        }
+//
+//
+//
+//    }
+
+    function admission_list_export()
+    {
+        if ($this->session->userdata('admin_login') != 1)
+            redirect(base_url(), 'refresh');
+
+        // Fetch data from the 'admission_form' table
+        $admission_data = $this->db->get('admission_form')->result_array();
+
+        // Check if Excel export is requested
+        if ($this->input->get('export') == 'excel') {
+            $spreadsheet = new Spreadsheet();
+            $sheet = $spreadsheet->getActiveSheet();
+
+            // Set the headers for the Excel file based on the columns in your schema
+            $sheet->setCellValue('A1', 'ID');
+            $sheet->setCellValue('B1', 'Class');
+            $sheet->setCellValue('C1', 'Image');
+            $sheet->setCellValue('D1', 'Roll ID');
+            $sheet->setCellValue('E1', 'Educational Year');
+            $sheet->setCellValue('F1', 'Student Name (Bangla)');
+            $sheet->setCellValue('G1', 'Student Name (English)');
+            $sheet->setCellValue('H1', 'Birth Date');
+            $sheet->setCellValue('I1', 'Online Birth Registration No');
+            $sheet->setCellValue('J1', 'Calculated Age');
+            $sheet->setCellValue('K1', 'Religion');
+            $sheet->setCellValue('L1', 'Mobile No');
+            $sheet->setCellValue('M1', 'Father Alive Status');
+            $sheet->setCellValue('N1', 'Father Name (Bangla)');
+            $sheet->setCellValue('O1', 'Father Name (English)');
+            $sheet->setCellValue('P1', 'Father NID');
+            $sheet->setCellValue('Q1', 'Father Mobile No');
+            $sheet->setCellValue('R1', 'Father Occupation');
+            $sheet->setCellValue('S1', 'Father Yearly Income');
+            $sheet->setCellValue('T1', 'Mother Alive Status');
+            $sheet->setCellValue('U1', 'Mother Name (Bangla)');
+            $sheet->setCellValue('V1', 'Mother Name (English)');
+            $sheet->setCellValue('W1', 'Mother NID');
+            $sheet->setCellValue('X1', 'Mother Mobile No');
+            $sheet->setCellValue('Y1', 'Mother Occupation');
+            $sheet->setCellValue('Z1', 'Guardian Name');
+            $sheet->setCellValue('AA1', 'Guardian Name (English)');
+            $sheet->setCellValue('AB1', 'Guardian NID');
+            $sheet->setCellValue('AC1', 'Guardian Phone');
+            $sheet->setCellValue('AD1', 'Previous School Name');
+            $sheet->setCellValue('AE1', 'Previous School Registration No');
+            $sheet->setCellValue('AF1', 'Educational Year');
+            $sheet->setCellValue('AG1', 'Permanent Address Village');
+            $sheet->setCellValue('AH1', 'Permanent Address Post');
+            $sheet->setCellValue('AI1', 'Permanent Address Upojila');
+            $sheet->setCellValue('AJ1', 'Permanent Address City');
+            $sheet->setCellValue('AK1', 'Present Address Village');
+            $sheet->setCellValue('AL1', 'Present Address Post');
+            $sheet->setCellValue('AM1', 'Present Address Upojila');
+            $sheet->setCellValue('AN1', 'Present Address City');
+            $sheet->setCellValue('AO1', 'Created Date');
+
+            // Fill the data in the spreadsheet
+            $row = 2; // Start from row 2 to leave space for headers
+            foreach ($admission_data as $data) {
+                $sheet->setCellValue('A' . $row, $data['id']);
+                $sheet->setCellValue('B' . $row, $data['class']);
+                $sheet->setCellValue('C' . $row, $data['image']);
+                $sheet->setCellValue('D' . $row, $data['roll_id']);
+                $sheet->setCellValue('E' . $row, $data['recent_educational_year']);
+                $sheet->setCellValue('F' . $row, $data['student_name_bangla']);
+                $sheet->setCellValue('G' . $row, $data['student_name_english']);
+                $sheet->setCellValue('H' . $row, $data['birth_date']);
+                $sheet->setCellValue('I' . $row, $data['online_birth_registration_no']);
+                $sheet->setCellValue('J' . $row, $data['calculated_age_on_date']);
+                $sheet->setCellValue('K' . $row, $data['religion']);
+                $sheet->setCellValue('L' . $row, $data['mobile_no']);
+                $sheet->setCellValue('M' . $row, $data['father_alive_status']);
+                $sheet->setCellValue('N' . $row, $data['father_name_bangla']);
+                $sheet->setCellValue('O' . $row, $data['father_name_english']);
+                $sheet->setCellValue('P' . $row, $data['father_nid']);
+                $sheet->setCellValue('Q' . $row, $data['father_mobile_no']);
+                $sheet->setCellValue('R' . $row, $data['father_occupation']);
+                $sheet->setCellValue('S' . $row, $data['father_yealy_income']);
+                $sheet->setCellValue('T' . $row, $data['mother_alive_status']);
+                $sheet->setCellValue('U' . $row, $data['mother_name_bangla']);
+                $sheet->setCellValue('V' . $row, $data['mother_name_english']);
+                $sheet->setCellValue('W' . $row, $data['mother_nid']);
+                $sheet->setCellValue('X' . $row, $data['mother_mobile_no']);
+                $sheet->setCellValue('Y' . $row, $data['mother_occupation']);
+                $sheet->setCellValue('Z' . $row, $data['guardian_name']);
+                $sheet->setCellValue('AA' . $row, $data['guardian_name_english']);
+                $sheet->setCellValue('AB' . $row, $data['guardian_nid']);
+                $sheet->setCellValue('AC' . $row, $data['guardian_phone']);
+                $sheet->setCellValue('AD' . $row, $data['previous_school_name']);
+                $sheet->setCellValue('AE' . $row, $data['previous_school_registration_no']);
+                $sheet->setCellValue('AF' . $row, $data['educational_year']);
+                $sheet->setCellValue('AG' . $row, $data['permanent_address_vilage']);
+                $sheet->setCellValue('AH' . $row, $data['permanent_address_post']);
+                $sheet->setCellValue('AI' . $row, $data['permanent_address_upozila']);
+                $sheet->setCellValue('AJ' . $row, $data['permanent_address_city']);
+                $sheet->setCellValue('AK' . $row, $data['present_address_vilage']);
+                $sheet->setCellValue('AL' . $row, $data['present_address_post']);
+                $sheet->setCellValue('AM' . $row, $data['present_address_upozila']);
+                $sheet->setCellValue('AN' . $row, $data['present_address_city']);
+                $sheet->setCellValue('AO' . $row, $data['created_date']);
+
+                $row++;
+            }
+
+            // Set the content type and filename for the export
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="admission_list.xlsx"');
+            header('Cache-Control: max-age=0');
+
+            // Write the file to the output
+            $writer = new Xlsx($spreadsheet);
+            $writer->save('php://output');
+            exit; // Ensure no further output after the Excel file is generated
+        }
+    }
+
+
+
     /****MANAGE SUBJECTS*****/
     function subject($param1 = '', $param2 = '' , $param3 = '')
     {
@@ -1485,7 +1758,9 @@ class Super_admin extends CI_Controller
         $this->load->view('backend/index', $page_data);
         $this->footer_layout();
     }
-    
+
+
+
     /*****LANGUAGE SETTINGS*********/
     function manage_language($param1 = '', $param2 = '', $param3 = '')
     {

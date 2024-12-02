@@ -27,6 +27,43 @@
  * @link		http://codeigniter.com/user_guide/libraries/loader.html
  */
 class CI_Loader {
+    var $benchmark = 0;
+
+    // Declare all the dynamic properties
+    var $db;
+    var $hooks;
+    var $config;
+    var $utf8;
+    var $uri;
+    var $router;
+    var $output;
+    var $security;
+    var $input;
+    var $lang;
+    var $load;
+    var $session;
+    var $pagination;
+    var $xmlrpc;
+    var $form_validation;
+    var $email;
+    var $upload;
+    var $paypal;
+    var $email_model;
+    var $crud_model;
+    var $nm;            // New property
+    var $news;          // New property
+    var $em;            // New property
+    var $site_links;    // New property
+    var $am;    // New property
+    var $event;    // New property
+    var $notice;    // New property
+    var $page_model;    // New property
+    var $hbm;    // New property
+    var $gm;    // New property
+    var $tech_m;    // New property
+    var $emp_m;    // New property
+    var $srm;    // New property
+//    var $encryption;    // New property
 
 	// All these are set automatically. Don't mess with them.
 	/**
@@ -738,7 +775,7 @@ class CI_Loader {
 	 * @param	array
 	 * @return	void
 	 */
-	protected function _ci_load($_ci_data)
+    protected function _ci_load($_ci_data)
 	{
 		// Set the default data variables
 		foreach (array('_ci_view', '_ci_vars', '_ci_path', '_ci_return') as $_ci_val)
@@ -783,23 +820,24 @@ class CI_Loader {
 		// This allows anything loaded using $this->load (views, files, etc.)
 		// to become accessible from within the Controller and Model functions.
 
-		$_ci_CI =& get_instance();
-		foreach (get_object_vars($_ci_CI) as $_ci_key => $_ci_var)
-		{
-			if ( ! isset($this->$_ci_key))
-			{
-				$this->$_ci_key =& $_ci_CI->$_ci_key;
-			}
-		}
+        $_ci_CI =& get_instance();
+        foreach (get_object_vars($_ci_CI) as $_ci_key => $_ci_var)
+        {
+            if ( ! isset($this->$_ci_key))
+            {
+                $this->$_ci_key =& $_ci_CI->$_ci_key;
+            }
+        }
 
-		/*
-		 * Extract and cache variables
-		 *
-		 * You can either set variables using the dedicated $this->load_vars()
-		 * function or via the second parameter of this function. We'll merge
-		 * the two types and cache them so that views that are embedded within
-		 * other views can have access to these variables.
-		 */
+
+        /*
+         * Extract and cache variables
+         *
+         * You can either set variables using the dedicated $this->load_vars()
+         * function or via the second parameter of this function. We'll merge
+         * the two types and cache them so that views that are embedded within
+         * other views can have access to these variables.
+         */
 		if (is_array($_ci_vars))
 		{
 			$this->_ci_cached_vars = array_merge($this->_ci_cached_vars, $_ci_vars);

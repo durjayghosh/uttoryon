@@ -347,21 +347,35 @@ if ( ! function_exists('show_404'))
 * @access	public
 * @return	void
 */
-if ( ! function_exists('log_message'))
-{
-	function log_message($level = 'error', $message, $php_error = FALSE)
-	{
-		static $_log;
+//if ( ! function_exists('log_message'))
+//{
+//	function log_message($level = 'error', $message, $php_error = FALSE)
+//	{
+//		static $_log;
+//
+//		if (config_item('log_threshold') == 0)
+//		{
+//			return;
+//		}
+//
+//		$_log =& load_class('Log');
+//		$_log->write_log($level, $message, $php_error);
+//	}
+//}
+if (!function_exists('log_message')) {
+    function log_message($message, $level = 'error', $php_error = false)
+    {
+        static $_log;
 
-		if (config_item('log_threshold') == 0)
-		{
-			return;
-		}
+        if (config_item('log_threshold') == 0) {
+            return;
+        }
 
-		$_log =& load_class('Log');
-		$_log->write_log($level, $message, $php_error);
-	}
+        $_log =& load_class('Log');
+        $_log->write_log($level, $message, $php_error);
+    }
 }
+
 
 // ------------------------------------------------------------------------
 

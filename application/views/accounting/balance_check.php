@@ -185,8 +185,10 @@
 																	    $query = $this->db->get('accounting_expense');
 																	    $result = $query->result();
 
-																	    echo number_format($total_expense= $result[0]->total_expense,2);
-																	 	?>
+                                                                        $total_expense = $result[0]->total_expense ?? 0;  // Default to 0 if null
+                                                                        echo number_format($total_expense, 2);
+
+                                                                        ?>
 
 
 																	</td>

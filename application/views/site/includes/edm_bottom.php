@@ -27,19 +27,19 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <h3 class="column-title">Visitor Counter</h3>
-                    <div class="edm_s4s_content">
-                    
-                        <?php 
-                              $hm = "D:/wamp/www/schoolms/assets"; 
-                              $hm2 = "http://localhost/schoolms/assets"; 
-                              include "$hm/ov/hiox-uo.php";
-                            ?>
-                            Total Visitor: <?php include "counter.php" ?> <br>
-                    </div>
-                </div>
-                <div class="col-sm-3">
+<!--                <div class="col-sm-3">-->
+<!--                    <h3 class="column-title">Visitor Counter</h3>-->
+<!--                    <div class="edm_s4s_content">-->
+<!--                    -->
+<!--                        --><?php //
+//                              $hm = "D:/wamp/www/schoolms/assets";
+//                              $hm2 = "http://localhost/schoolms/assets";
+//                              include "$hm/ov/hiox-uo.php";
+//                            ?>
+<!--                            Total Visitor: --><?php //include "counter.php" ?><!-- <br>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="col-sm-6">
                     <h3 class="column-title">Photo Gallery</h3>
                     <div id="edm_gallery">
                         <div class="portfolio-items isotope" style="position: relative; overflow: hidden; height: 408px;">

@@ -26,6 +26,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/input.html
  */
+#[\AllowDynamicProperties]
 class CI_Input {
 
 	/**
@@ -369,47 +370,86 @@ class CI_Input {
 	* @param	string	ipv4 or ipv6
 	* @return	bool
 	*/
-	public function valid_ip($ip, $which = '')
-	{
-		$which = strtolower($which);
+//	public function valid_ip($ip, $which = '')
+//	{
+//		$which = strtolower($which);
+//
+//		// First check if filter_var is available
+//		if (is_callable('filter_var'))
+//		{
+//			switch ($which) {
+//				case 'ipv4':
+//					$flag = FILTER_FLAG_IPV4;
+//					break;
+//				case 'ipv6':
+//					$flag = FILTER_FLAG_IPV6;
+//					break;
+//				default:
+//					$flag = '';
+//					break;
+//			}
+//
+//			return (bool) filter_var($ip, FILTER_VALIDATE_IP, $flag);
+//		}
+//
+//		if ($which !== 'ipv6' && $which !== 'ipv4')
+//		{
+//			if (strpos($ip, ':') !== FALSE)
+//			{
+//				$which = 'ipv6';
+//			}
+//			elseif (strpos($ip, '.') !== FALSE)
+//			{
+//				$which = 'ipv4';
+//			}
+//			else
+//			{
+//				return FALSE;
+//			}
+//		}
+//
+//		$func = '_valid_'.$which;
+//		return $this->$func($ip);
+//	}
 
-		// First check if filter_var is available
-		if (is_callable('filter_var'))
-		{
-			switch ($which) {
-				case 'ipv4':
-					$flag = FILTER_FLAG_IPV4;
-					break;
-				case 'ipv6':
-					$flag = FILTER_FLAG_IPV6;
-					break;
-				default:
-					$flag = '';
-					break;
-			}
+    public function valid_ip($ip, $which = '')
+    {
+        $which = strtolower($which);
 
-			return (bool) filter_var($ip, FILTER_VALIDATE_IP, $flag);
-		}
+        // First check if filter_var is available
+        if (is_callable('filter_var')) {
+            switch ($which) {
+                case 'ipv4':
+                    $flag = FILTER_FLAG_IPV4;
+                    break;
+                case 'ipv6':
+                    $flag = FILTER_FLAG_IPV6;
+                    break;
+                default:
+                    $flag = 0;  // Default value instead of null
+                    break;
+            }
 
-		if ($which !== 'ipv6' && $which !== 'ipv4')
-		{
-			if (strpos($ip, ':') !== FALSE)
-			{
-				$which = 'ipv6';
-			}
-			elseif (strpos($ip, '.') !== FALSE)
-			{
-				$which = 'ipv4';
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
+            // Only pass $flag if it's not zero
+            return (bool) filter_var($ip, FILTER_VALIDATE_IP, $flag);
+        }
 
-		$func = '_valid_'.$which;
-		return $this->$func($ip);
-	}
+        // Fallback logic if filter_var is not available
+        if ($which !== 'ipv6' && $which !== 'ipv4') {
+            if (strpos($ip, ':') !== FALSE) {
+                $which = 'ipv6';
+            } elseif (strpos($ip, '.') !== FALSE) {
+                $which = 'ipv4';
+            } else {
+                return FALSE;
+            }
+        }
+
+        $func = '_valid_' . $which;
+        return $this->$func($ip);
+    }
+
+
 
 	// --------------------------------------------------------------------
 

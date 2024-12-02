@@ -30,66 +30,66 @@
  */
 class CI_DB_driver {
 
-	var $username;
-	var $password;
-	var $hostname;
-	var $database;
-	var $dbdriver		= 'mysql';
-	var $dbprefix		= '';
-	var $char_set		= 'utf8';
-	var $dbcollat		= 'utf8_general_ci';
-	var $autoinit		= TRUE; // Whether to automatically initialize the DB
-	var $swap_pre		= '';
-	var $port			= '';
-	var $pconnect		= FALSE;
-	var $conn_id		= FALSE;
-	var $result_id		= FALSE;
-	var $db_debug		= FALSE;
-	var $benchmark		= 0;
-	var $query_count	= 0;
-	var $bind_marker	= '?';
-	var $save_queries	= TRUE;
-	var $queries		= array();
-	var $query_times	= array();
-	var $data_cache		= array();
-	var $trans_enabled	= TRUE;
-	var $trans_strict	= TRUE;
-	var $_trans_depth	= 0;
-	var $_trans_status	= TRUE; // Used with transactions to determine if a rollback should occur
-	var $cache_on		= FALSE;
-	var $cachedir		= '';
-	var $cache_autodel	= FALSE;
-	var $CACHE; // The cache class object
+    // Declare properties explicitly to avoid dynamic property creation
+    var $username;
+    var $password;
+    var $hostname;
+    var $database;
+    var $dbdriver = 'mysql';
+    var $dbprefix = '';
+    var $char_set = 'utf8';
+    var $dbcollat = 'utf8_general_ci';
+    var $autoinit = TRUE;
+    var $swap_pre = '';
+    var $port = '';
+    var $pconnect = FALSE;
+    var $conn_id = FALSE;
+    var $result_id = FALSE;
+    var $db_debug = FALSE;
+    var $benchmark = 0;
+    var $query_count = 0;
+    var $bind_marker = '?';
+    var $save_queries = TRUE;
+    var $queries = array();
+    var $query_times = array();
+    var $data_cache = array();
+    var $trans_enabled = TRUE;
+    var $trans_strict = TRUE;
+    var $_trans_depth = 0;
+    var $_trans_status = TRUE;
+    var $cache_on = FALSE;
+    var $cachedir = '';
+    var $cache_autodel = FALSE;
+    var $CACHE;  // The cache class object
 
-	// Private variables
-	var $_protect_identifiers	= TRUE;
-	var $_reserved_identifiers	= array('*'); // Identifiers that should NOT be escaped
+    // Private variables
+    var $_protect_identifiers = TRUE;
+    var $_reserved_identifiers = array('*');
 
-	// These are use with Oracle
-	var $stmt_id;
-	var $curs_id;
-	var $limit_used;
+    // Oracle specific
+    var $stmt_id;
+    var $curs_id;
+    var $limit_used;
 
+    // Declare the missing $stricton property
+    var $stricton = FALSE; // Add this line to explicitly declare the property
 
+    /**
+     * Constructor. Accepts one parameter containing the database
+     * connection settings.
+     *
+     * @param array $params
+     */
+    function __construct($params)
+    {
+        if (is_array($params)) {
+            foreach ($params as $key => $val) {
+                $this->$key = $val;
+            }
+        }
 
-	/**
-	 * Constructor.  Accepts one parameter containing the database
-	 * connection settings.
-	 *
-	 * @param array
-	 */
-	function __construct($params)
-	{
-		if (is_array($params))
-		{
-			foreach ($params as $key => $val)
-			{
-				$this->$key = $val;
-			}
-		}
-
-		log_message('debug', 'Database Driver Class Initialized');
-	}
+        log_message('debug', 'Database Driver Class Initialized');
+    }
 
 	// --------------------------------------------------------------------
 

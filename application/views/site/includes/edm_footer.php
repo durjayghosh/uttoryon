@@ -2,7 +2,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                © <?php echo date('Y') ?> <?=$system_name?>. Developed by <a target="_blank" href="https://seoexpate.com/" title="SEBL SOFT 4 SCHOOL">SEO Expate Bangladesh Ltd.</a>
+                © <?php echo date('Y') ?> <?= $system_name ?>. Developed by <a target="_blank" href="https://seoexpate.com/" title="SEBL SOFT 4 SCHOOL">SEO Expate Bangladesh Ltd.</a>
                 </div>
                 <div class="col-sm-6">
                     <ul class="social-icons">

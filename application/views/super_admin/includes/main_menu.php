@@ -124,6 +124,30 @@ function alertfy(){
 
 							</li>
 
+							<li class="<?php if($page_name == 'admission_list')echo 'active open';?>">
+
+								<a href="<?php echo base_url();?>super_admin/admission_list">
+
+									<div class="item-content">
+
+										<div class="item-media">
+
+											<i class="ti-home"></i>
+
+										</div>
+
+										<div class="item-inner">
+
+											<span class="title"> Admission List </span>
+
+										</div>
+
+									</div>
+
+								</a>
+
+							</li>
+
 							<!-- accounting menu -->
 							<li class="<?php if($page_name == 'add_account' ||
 												$page_name == 'edit_account' ||

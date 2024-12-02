@@ -346,10 +346,9 @@ class Site extends CI_Controller
 		//echo "Hello site";
 		$this->load->model("page_model");
 		$pagedata["results"] = $this->page_model->getData("online_admission");
-		$data['page_title'] = 'Schoo Name';
+        $pagedata['errors'] = $this->session->flashdata('errors');
 		$this->load->view('site/online_admission',$pagedata);
 	}
-
     public function store_online_admission_form() {
         $this->load->library("form_validation");
 
@@ -358,52 +357,159 @@ class Site extends CI_Controller
         $this->form_validation->set_rules("roll_id", "Roll / ID", "required|xss_clean");
         $this->form_validation->set_rules("student_name_bangla", "Student Name (Bangla)", "required|xss_clean");
         $this->form_validation->set_rules("student_name_english", "Student Name (English)", "required|xss_clean");
+        $this->form_validation->set_rules("recent_educational_year", "Educational Year", "xss_clean");
         $this->form_validation->set_rules("birth_date", "Birth Date", "required|xss_clean");
         $this->form_validation->set_rules("religion", "Religion", "required|xss_clean");
         $this->form_validation->set_rules("mobile_no", "Mobile No", "required|xss_clean");
         $this->form_validation->set_rules("father_name_bangla", "Father Name (Bangla)", "required|xss_clean");
+        $this->form_validation->set_rules("father_name_english", "Father Name (English)", "xss_clean");
         $this->form_validation->set_rules("father_nid", "Father NID", "xss_clean");
         $this->form_validation->set_rules("father_mobile_no", "Father Mobile No", "xss_clean");
         $this->form_validation->set_rules("mother_name_bangla", "Mother Name (Bangla)", "required|xss_clean");
+        $this->form_validation->set_rules("mother_name_english", "Mother Name (English)", "xss_clean");
         $this->form_validation->set_rules("mother_nid", "Mother NID", "xss_clean");
         $this->form_validation->set_rules("mother_mobile_no", "Mother Mobile No", "xss_clean");
-        $this->form_validation->set_rules("permanent_address", "Permanent Address", "required|xss_clean");
-        $this->form_validation->set_rules("present_address", "Present Address", "xss_clean");
+        $this->form_validation->set_rules("permanent_address_vilage", "Permanent Address Village", "required|xss_clean");
+        $this->form_validation->set_rules("permanent_address_post", "Permanent Address Post", "xss_clean");
+        $this->form_validation->set_rules("permanent_address_upozila", "Permanent Address Upozila", "xss_clean");
+        $this->form_validation->set_rules("permanent_address_city", "Permanent Address City", "xss_clean");
+        $this->form_validation->set_rules("present_address_vilage", "Present Address Village", "xss_clean");
+        $this->form_validation->set_rules("present_address_post", "Present Address Post", "xss_clean");
+        $this->form_validation->set_rules("present_address_upozila", "Present Address Upozila", "xss_clean");
+        $this->form_validation->set_rules("present_address_city", "Present Address City", "xss_clean");
+        $this->form_validation->set_rules("image", "Image", "xss_clean");
 
         if ($this->form_validation->run() == FALSE) {
-            // Validation failed, redirect to the form with an error message
-            redirect("admission/form/error");
+            // Validation failed, set flashdata for errors
+            $this->session->set_flashdata('errors', validation_errors());
+            redirect("site/online_admission");
         } else {
+            $member_image = $_FILES['image']['name'];
+            if ($member_image != "") {
+                $member_image = random_string('alnum', 10) . '.jpg';
+
+                //insert image
+                $config['file_name'] = $member_image;
+                $config['upload_path'] = 'uploads/application_form';
+                $config['allowed_types'] = 'gif|jpg|jpeg|png';
+                $config['max_size'] = '100000';
+                $config['encrypt_name'] = false;
+                $config['image_library'] = 'gd2';
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+                $this->upload->do_upload('image');
+
+                $file_data = $this->upload->data();
+            } else {
+                $member_image = "default.png";
+            }
+
+
+
             // Prepare data for insertion
             $data = array(
-                'class'                 => $this->input->post('class'),
-                'roll_id'               => $this->input->post('roll_id'),
-                'student_name_bangla'   => $this->input->post('student_name_bangla'),
-                'student_name_english'  => $this->input->post('student_name_english'),
-                'birth_date'            => $this->input->post('birth_date'),
-                'religion'              => $this->input->post('religion'),
-                'mobile_no'             => $this->input->post('mobile_no'),
-                'father_name_bangla'    => $this->input->post('father_name_bangla'),
-                'father_nid'            => $this->input->post('father_nid'),
-                'father_mobile_no'      => $this->input->post('father_mobile_no'),
-                'mother_name_bangla'    => $this->input->post('mother_name_bangla'),
-                'mother_nid'            => $this->input->post('mother_nid'),
-                'mother_mobile_no'      => $this->input->post('mother_mobile_no'),
-                'permanent_address'     => $this->input->post('permanent_address'),
-                'present_address'       => $this->input->post('present_address'),
-                'created_date'          => date('Y-m-d H:i:s'),
+                'class'                     => $this->input->post('class'),
+                'image'                     => $member_image,
+                'roll_id'                   => $this->input->post('roll_id'),
+                'student_name_bangla'       => $this->input->post('student_name_bangla'),
+                'student_name_english'      => $this->input->post('student_name_english'),
+                'recent_educational_year'      => $this->input->post('recent_educational_year'),
+                'birth_date'                => $this->input->post('birth_date'),
+                'online_birth_registration_no' => $this->input->post('online_birth_registration_no'),
+                'calculated_age_on_date'    => $this->input->post('calculated_age_on_date'),
+                'religion'                  => $this->input->post('religion'),
+                'mobile_no'                 => $this->input->post('mobile_no'),
+                'father_alive_status'       => $this->input->post('father_alive_status'),
+                'father_name_bangla'        => $this->input->post('father_name_bangla'),
+                'father_name_english'       => $this->input->post('father_name_english'),
+                'father_nid'                => $this->input->post('father_nid'),
+                'father_mobile_no'          => $this->input->post('father_mobile_no'),
+                'father_occupation'         => $this->input->post('father_occupation'),
+                'father_yealy_income'       => $this->input->post('father_yealy_income'),
+                'mother_alive_status'       => $this->input->post('mother_alive_status'),
+                'mother_name_bangla'        => $this->input->post('mother_name_bangla'),
+                'mother_name_english'       => $this->input->post('mother_name_english'),
+                'mother_nid'                => $this->input->post('mother_nid'),
+                'mother_mobile_no'          => $this->input->post('mother_mobile_no'),
+                'mother_occupation'         => $this->input->post('mother_occupation'),
+                'guardian_name'             => $this->input->post('guardian_name'),
+                'guardian_phone'                  => $this->input->post('guardian_phone'),
+                'guardian_name_english'     => $this->input->post('guardian_name_english'),
+                'guardian_nid'              => $this->input->post('guardian_nid'),
+                'previous_school_name'      => $this->input->post('previous_school_name'),
+                'previous_school_registration_no' => $this->input->post('previous_school_registration_no'),
+                'educational_year'          => $this->input->post('educational_year'),
+                'permanent_address_vilage'  => $this->input->post('permanent_address_vilage'),
+                'permanent_address_post'    => $this->input->post('permanent_address_post'),
+                'permanent_address_upozila' => $this->input->post('permanent_address_upozila'),
+                'permanent_address_city'    => $this->input->post('permanent_address_city'),
+                'present_address_vilage'    => $this->input->post('present_address_vilage'),
+                'present_address_post'      => $this->input->post('present_address_post'),
+                'present_address_upozila'   => $this->input->post('present_address_upozila'),
+                'present_address_city'      => $this->input->post('present_address_city'),
+                'created_date'              => date('Y-m-d H:i:s'),
             );
 
-            // Insert data into the database
             $this->db->insert('admission_form', $data);
+            $insert_id = $this->db->insert_id();
 
-            // Redirect with success message
-            redirect("site/online_admission");
+            $encrypted_id =  hash('sha256', $insert_id);
+
+            // Insert data into the database
+            redirect("site/view_admission_form/" . urlencode($encrypted_id));
+
+          //  redirect("site/view_admission_form/$encrypted_id");
         }
     }
 
+//    function view_admission_form($encrypted_id){
+//
+//        $this->load->library('encryption');
+//
+//        // Decrypt the ID
+//        $insert_id = $this->encryption->decrypt(urldecode($encrypted_id));
+//
+//        if ($insert_id === false) {
+//            show_error("Invalid or corrupted ID.");
+//        }
+//
+//        $row = $this->db->get_where('admission_form', ['id' => $insert_id])->row();
+//        $data['row'] = $row;
+//        $this->load->view('site/view_application_form', $data);
+//    }
+    public function view_admission_form($hashed_id)
+    {
+        // Retrieve the admission form from the database
+        $form = $this->db->get('admission_form')->result_array();
 
-	public function inst_resuls(){
+        $decoded_id = null;
+
+        // Loop through the form to find the matching hashed ID
+        foreach ($form as $row) {
+            // Hash the ID and check if it matches the hashed ID passed in the URL
+            if (hash('sha256', $row['id']) === $hashed_id) {
+                $decoded_id = $row['id'];  // Found the matching ID
+                break;
+            }
+        }
+
+        // If no matching ID is found, show an error
+        if ($decoded_id === null) {
+            show_error("Invalid or corrupted ID.");
+        }
+
+        // Fetch the form data based on the decoded ID
+        $data['row'] = $this->db->get_where('admission_form', ['id' => $decoded_id])->row();
+
+        // Load the view with the form data
+        $this->load->view('site/view_application_form', $data);
+    }
+
+
+
+
+
+    public function inst_resuls(){
 		$this->nnemodels();
 		//echo "Hello site";
 		$this->load->model("page_model");

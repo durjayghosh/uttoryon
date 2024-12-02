@@ -89,16 +89,18 @@
  * 
  *******************************************************************************
 */
-class Paypal {
+class Paypal
+{
+    // Declare properties at the top of the class
+    private $paypal_url;
+    private $last_error;
+    private $ipn_log_file;
+    private $ipn_log;
+    private $ipn_response;
+    private $fields = [];  // Initialize the fields array
 
-    var $last_error;
-    var $ipn_log;
-    var $ipn_log_file;
-    var $ipn_response;
-    var $ipn_data = array();
-    var $fields = array();
-
-    function __construct() {
+    public function __construct()
+    {
         // initialization constructor. Called when class is created.
         $this->paypal_url = 'https://www.paypal.com/cgi-bin/webscr';
         $this->last_error = '';
@@ -111,9 +113,14 @@ class Paypal {
         $this->add_field('cmd', '_xclick');
     }
 
-    function add_field($field, $value) {
+    // Method to add fields to $fields array
+    public function add_field($field, $value)
+    {
         $this->fields[$field] = $value;
     }
+
+    // Add field to $fields array
+
 
     function submit_paypal_post() {
         echo "<html>\n";
